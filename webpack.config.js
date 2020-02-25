@@ -8,6 +8,9 @@ module.exports = {
 	entry: {
 		bundle: ['./src/main.js']
 	},
+	devServer: {
+		open: true
+	},
 	resolve: {
 		alias: {
 			svelte: path.resolve('node_modules', 'svelte')

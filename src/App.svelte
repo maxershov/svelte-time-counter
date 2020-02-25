@@ -1,11 +1,17 @@
 <script>
-	export let name;
+  import Home from "./Home";
+  import About from "./About";
+  import Counter from "./Counter";
+  import Contacts from "./Contacts";
 </script>
 
 <style>
-	h1 {
-		color: purple;
-	}
+
 </style>
 
-<h1>Hello {name}!</h1>
+<div className="app">
+  <Home />
+  <About />
+  <Counter />
+  <Contacts />
+</div>
