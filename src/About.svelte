@@ -1,17 +1,51 @@
-<div className="about">
-  <h1>About us</h1>
-  <div className="about__cards">
-    <div className="about__card">
-      <p>*FIRST img</p>
-      <p>First Card</p>
+<script>
+  import dollar from "./images/dollar.svg";
+  import clock from "./images/clock.svg";
+  import neural from "./images/neural.svg";
+</script>
+
+<style>
+  h2 {
+    text-align: center;
+  }
+  p {
+    font-size: 1.1rem;
+  }
+  .about__cards {
+    display: flex;
+    /* justify-content: center; */
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .about__card {
+    text-align: center;
+    padding: 2rem;
+    width: 20rem;
+  }
+  img {
+    width: 7rem;
+  }
+</style>
+
+<div class="about">
+  <h2>OUR ADVANTAGES:</h2>
+  <div class="about__cards">
+    <div class="about__card">
+      <img alt="neural" src={neural} />
+      <h3>ACCURATE*</h3>
+      <p>Our neural network provides very accurate calculation</p>
+      <p>*author's opinion</p>
     </div>
-    <div className="about__card">
-      <p>*SECOND img</p>
-      <p>second Card</p>
+    <div class="about__card">
+      <img alt="clock" src={clock} />
+      <h3>FAST</h3>
+      <p>You get all results faster then you can imagine</p>
     </div>
-    <div className="about__card">
-      <p>*THIRD img</p>
-      <p>Third Card</p>
+    <div class="about__card">
+      <img alt="dollar" src={dollar} />
+      <h3>FREE</h3>
+      <p>You can't put a price on time*</p>
+      <p>*author's opinion</p>
     </div>
   </div>
 </div>

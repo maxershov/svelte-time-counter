@@ -45,6 +45,15 @@ module.exports = {
 					prod ? MiniCssExtractPlugin.loader : 'style-loader',
 					'css-loader'
 				]
+			},
+			{
+				test: /\.svg$/,
+				use: {
+					loader: "file-loader",
+					options: {
+						name: "static/media/[name].[hash:8].[ext]"
+					}
+				}
 			}
 		]
 	},
@@ -54,5 +63,5 @@ module.exports = {
 			filename: '[name].css'
 		})
 	],
-	devtool: prod ? false: 'source-map'
+	devtool: prod ? false : 'source-map'
 };
