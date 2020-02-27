@@ -7,15 +7,17 @@
 <style>
   h2 {
     text-align: center;
+    margin-top:4rem;
   }
   p {
     font-size: 1.1rem;
   }
   .about__cards {
     display: flex;
-    /* justify-content: center; */
     justify-content: space-between;
     flex-wrap: wrap;
+    padding-left: 6rem;
+    padding-right: 6rem;
   }
   .about__card {
     text-align: center;
@@ -23,11 +25,12 @@
     width: 20rem;
   }
   img {
-    width: 7rem;
+    width: 8rem;
   }
 </style>
 
 <div class="about">
+  <!-- <h2>ABOUT US:</h2> -->
   <h2>OUR ADVANTAGES:</h2>
   <div class="about__cards">
     <div class="about__card">
