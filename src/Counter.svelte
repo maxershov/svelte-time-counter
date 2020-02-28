@@ -35,6 +35,17 @@
     text-transform: uppercase;
     text-shadow: 2px 2px 0px rgb(255, 255, 255);
   }
+  input {
+    width: 20vw;
+  }
+  select, input, button {
+    font-size:1.3rem;
+  }
+  button {
+    display: block;
+    margin:0 auto;
+    margin-top:0.5rem;
+  }
 </style>
 
 <div class="counter">
@@ -51,7 +62,7 @@
   </select>
   <button on:click={handleClick}>COUNT</button>
   {#await promise}
-    <p>...start our neural network...</p>
+    <p>...starting our neural network...</p>
   {:then number}
     {#if !loading}
       <h3>Result: {number}</h3>
