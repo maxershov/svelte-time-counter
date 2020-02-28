@@ -3,6 +3,7 @@
   let answer;
   let type = "hours";
   let promise;
+  let loading = true;
 
   function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -13,7 +14,12 @@
   }
   async function countData() {
     await sleep(3000);
+    loading = false;
     return +input * 3.14;
+  }
+
+  function setLoadingTrue() {
+    loading = true;
   }
 </script>
 
@@ -23,13 +29,22 @@
     text-align: center;
     padding-bottom: 10rem;
     border-bottom: solid 1px;
+    background-color: rgb(255, 255, 255, 0.7);
+  }
+  h2 {
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0px rgb(255, 255, 255);
   }
 </style>
 
 <div class="counter">
-  <h3>Type time in hours/days</h3>
+  <h2>Type time in hours/days</h2>
   <p>Our neural network will calculate your real project time</p>
-  <input type="number" bind:value={input} />
+  <input
+    type="number"
+    bind:value={input}
+    placeholder="type your time"
+    on:input={setLoadingTrue} />
   <select bind:value={type} id="timeChose">
     <option value="hours">Hours</option>
     <option value="days">Days</option>
@@ -38,8 +53,8 @@
   {#await promise}
     <p>...start our neural network...</p>
   {:then number}
-    {#if number > 0.1}
-        <h3>Result: {number}</h3>
+    {#if !loading}
+      <h3>Result: {number}</h3>
       <h3>{input} {type}</h3>
       <h3>*</h3>
       <h3>{number} {type}</h3>

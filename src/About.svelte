@@ -13,7 +13,9 @@
     font-size: 1.1rem;
   }
   .about {
+    border-top: solid 1px;
     border-bottom: solid 1px;
+    background-color: white;
   }
   .about__cards {
     display: flex;

@@ -1,42 +1,41 @@
-html, body {
-	position: relative;
-	width: 100%;
-	height: 100%;
-	font-size: 16px;
+html,
+body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
 }
 
 body {
-	color: #333;
-	margin: 0;
-	box-sizing: border-box;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    color: #333;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    background-image: url("./jeshoots_background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 a {
-	color: rgb(0, 100, 200);
-	text-decoration: none;
+    color: rgb(0, 100, 200);
+    text-decoration: none;
 }
 
 a:hover {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
 button {
-	background-color: #f4f4f4;
-	outline: none;
+    background-color: #f4f4f4;
+    outline: none;
 }
 
 button:active {
-	background-color: #ddd;
+    background-color: #ddd;
 }
 
 button:focus {
-	border-color: #666;
-}
-
-.home {
-	background-image: url("./jeshoots_background.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
+    border-color: #666;
 }

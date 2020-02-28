@@ -15,7 +15,6 @@
 
   .home {
     padding-bottom: 40rem;
-    border-bottom: solid 1px;
   }
   .links {
     text-align: right;
