@@ -13,5 +13,5 @@
   <Home />
   <About />
   <Counter />
-  <Contacts />
+  <!-- <Contacts /> -->
 </div>

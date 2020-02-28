@@ -1,8 +1,20 @@
 <script>
-  let input = 0;
+  let input;
   let answer;
-  let type = 'hours';
-  $: answer = +input * 3.14;
+  let type = "hours";
+  let promise;
+
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  function handleClick() {
+    promise = countData();
+  }
+  async function countData() {
+    await sleep(3000);
+    return +input * 3.14;
+  }
 </script>
 
 <style>
@@ -10,6 +22,7 @@
     padding-top: 20rem;
     text-align: center;
     padding-bottom: 10rem;
+    border-bottom: solid 1px;
   }
 </style>
 
@@ -21,8 +34,16 @@
     <option value="hours">Hours</option>
     <option value="days">Days</option>
   </select>
-  <h3>First number:</h3>
-  <h3>{input} {type}</h3>
-  <h3>*</h3>
-  <h3>{answer} {type}</h3>
+  <button on:click={handleClick}>COUNT</button>
+  {#await promise}
+    <p>...start our neural network...</p>
+  {:then number}
+    {#if number > 0.1}
+        <h3>Result: {number}</h3>
+      <h3>{input} {type}</h3>
+      <h3>*</h3>
+      <h3>{number} {type}</h3>
+    {/if}
+  {/await}
+
 </div>
