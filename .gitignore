@@ -6,3 +6,4 @@ yarn.lock
 
 # host adress
 host.js
+public/static/

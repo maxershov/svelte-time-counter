@@ -1,4 +1,5 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 const path = require('path');
 const myLocalHost = require("./host");
 const mode = process.env.NODE_ENV || 'development';
@@ -63,6 +64,9 @@ module.exports = {
 	plugins: [
 		new MiniCssExtractPlugin({
 			filename: '[name].css'
+		}),
+		new CompressionPlugin({
+			algorithm: "gzip"
 		})
 	],
 	devtool: prod ? false : 'source-map'
