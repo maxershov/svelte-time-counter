@@ -34,32 +34,42 @@
 </style>
 
 <div class="about">
-  <h2>ABOUT US:</h2>
+  <h2>О НАС:</h2>
   <div class="about__text">
     <p>
-      Anybody have problems with time measurment for the projects development.
-      Our service can help you. Simply put numbers that your business client
-      wants, and our neural network can predict real time for the development
+      Разрабатывая программное обеспечение, мы часто сталкиваемся с неправильно
+      назначенными сроками. Это приводит к дедлайнами, стрессам в коллективе и
+      низкому качеству продукта.
+    </p>
+    <p>
+      В результате анализа многолетнего опыта разработки проектов в стартапах и
+      крупных компаниях, мы создали сервис для точного расчета времени разработки.
+      С помощью нейронных сетей, machine learning и AI мы можем предсказать
+      реальный срок разработки проекта, исходя из первоначальной оценки
+      заказчика.
     </p>
   </div>
-  <h2>OUR ADVANTAGES:</h2>
+  <h2>НАШИ ПРЕИМУЩЕСТВА:</h2>
   <div class="about__cards">
     <div class="about__card">
-      <img alt="neural" src={neural} />
-      <h3>ACCURATE*</h3>
-      <p>Our neural network provides very accurate calculation</p>
-      <i>*author's opinion</i>
+      <img alt="clock" src={clock} />
+      <h3>СКОРОСТЬ</h3>
+      <p>Вы получите результат быстрее, чем можете себе представить</p>
     </div>
     <div class="about__card">
-      <img alt="clock" src={clock} />
-      <h3>FAST</h3>
-      <p>You get all results faster then you can imagine</p>
+      <img alt="neural" src={neural} />
+      <h3>ТОЧНОСТЬ*</h3>
+      <p>
+        Наша нейронная сеть проводит очень точные расчеты, что гарантирует вам
+        отсутсвие делайнов
+      </p>
+      <i>*мнение автора</i>
     </div>
     <div class="about__card">
       <img alt="dollar" src={dollar} />
-      <h3>FREE</h3>
-      <p>You can't put a price on time*</p>
-      <i>*author's opinion</i>
+      <h3>БЕСПЛАТНО</h3>
+      <p>Время - бесценно*</p>
+      <i>*мнение автора</i>
     </div>
   </div>
 </div>

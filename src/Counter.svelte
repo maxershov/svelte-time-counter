@@ -3,7 +3,7 @@
   import { fly } from "svelte/transition";
   let input;
   let answer;
-  let type = "hours";
+  let type = "часов";
   let promise;
   let loading = true;
   let status;
@@ -20,6 +20,10 @@
     loading = false;
     return (+input * 3.14).toFixed(2);
   }
+
+  function randomInteger(min, max) {
+    return (Math.random() * (max - min) + min).toFixed(1);
+}
 </script>
 
 <style>
@@ -39,7 +43,7 @@
   select,
   input,
   button {
-    /* font-size: 1.5rem; */
+    font-size: 1.2rem;
   }
   select {
     cursor: pointer;
@@ -59,33 +63,36 @@
 </style>
 
 <div class="counter">
-  <h2>TYPE TIME IN HOURS/DAYS</h2>
-  <p>Our neural network will calculate your real project time</p>
+  <h2>ПОПРОБУЙТЕ СЕЙЧАС:</h2>
+  <p>
+    Введите предоставленное заказчиком/управляющим время разработки, и наша
+    нейросеть рассчитает точное время разработки
+  </p>
   <form on:submit|preventDefault={handleClick}>
     <input
       required
       type="number"
       bind:value={input}
-      placeholder="type your time"
+      placeholder="введите время"
       on:input={() => (loading = true)} />
-    <select bind:value={type} id="timeChose">
-      <option value="hours">HOURS</option>
-      <option value="days">DAYS</option>
+    <select bind:value={type} on:input={() => (loading = true)} id="timeChose">
+      <option value="часов">Часов</option>
+      <option value="дней">Дней</option>
     </select>
-    <button type="submit">COUNT</button>
+    <button type="submit">Запустить</button>
   </form>
   {#await promise}
     <p
       in:fade
       out:fly={{ y: 300, duration: 3000 }}
-      on:introstart={() => (status = '...starting our neural network...')}
-      on:introend={() => (status = '...loading results')}>
+      on:introstart={() => (status = '...загрузка нейронной сети...')}
+      on:introend={() => (status = `...обработка ${randomInteger(1000000, 100000000)} результатов...`)}>
       {status}
     </p>
   {:then number}
     {#if !loading}
       <h3 transition:fly={{ y: 300, duration: 3000 }}>
-        Result: {number} {type}
+        Результат: {number} {type}
       </h3>
     {/if}
   {/await}

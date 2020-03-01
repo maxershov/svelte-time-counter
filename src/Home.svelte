@@ -11,7 +11,7 @@
     margin-right: 1rem;
     color: white;
     text-transform: uppercase;
-    text-shadow: 2px 2px 0px rgb(12, 11, 11);
+    text-shadow: 1px 1px 0px rgb(12, 11, 11);
   }
 
   .home {
@@ -29,10 +29,10 @@
 
 <div class="home">
   <nav class="links">
-    <a href="/home">Home</a>
-    <a href="/contacts">Contacts</a>
+    <a href="/home">Главная</a>
+    <a href="/contacts">Контакты</a>
   </nav>
   <div class="home__text">
-    <h1>Get real development time for your project</h1>
+    <h1>Получите точное время разработки проекта</h1>
   </div>
 </div>
