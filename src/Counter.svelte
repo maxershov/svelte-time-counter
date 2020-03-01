@@ -1,9 +1,12 @@
 <script>
+  import { fade } from "svelte/transition";
+  import { fly } from "svelte/transition";
   let input;
   let answer;
   let type = "hours";
   let promise;
   let loading = true;
+  let status;
 
   function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -15,11 +18,7 @@
   async function countData() {
     await sleep(3000);
     loading = false;
-    return +input * 3.14;
-  }
-
-  function setLoadingTrue() {
-    loading = true;
+    return (+input * 3.14).toFixed(2);
   }
 </script>
 
@@ -32,43 +31,62 @@
     background-color: rgb(255, 255, 255, 0.7);
   }
   h2 {
-    text-transform: uppercase;
     text-shadow: 2px 2px 0px rgb(255, 255, 255);
   }
   input {
-    width: 20vw;
+    width: 17rem;
   }
-  select, input, button {
-    font-size:1.3rem;
+  select,
+  input,
+  button {
+    /* font-size: 1.5rem; */
+  }
+  select {
+    cursor: pointer;
   }
   button {
     display: block;
-    margin:0 auto;
-    margin-top:0.5rem;
+    margin: 0 auto;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    width: 10rem;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }
 </style>
 
 <div class="counter">
-  <h2>Type time in hours/days</h2>
+  <h2>TYPE TIME IN HOURS/DAYS</h2>
   <p>Our neural network will calculate your real project time</p>
-  <input
-    type="number"
-    bind:value={input}
-    placeholder="type your time"
-    on:input={setLoadingTrue} />
-  <select bind:value={type} id="timeChose">
-    <option value="hours">Hours</option>
-    <option value="days">Days</option>
-  </select>
-  <button on:click={handleClick}>COUNT</button>
+  <form on:submit|preventDefault={handleClick}>
+    <input
+      required
+      type="number"
+      bind:value={input}
+      placeholder="type your time"
+      on:input={() => (loading = true)} />
+    <select bind:value={type} id="timeChose">
+      <option value="hours">HOURS</option>
+      <option value="days">DAYS</option>
+    </select>
+    <button type="submit">COUNT</button>
+  </form>
   {#await promise}
-    <p>...starting our neural network...</p>
+    <p
+      in:fade
+      out:fly={{ y: 300, duration: 3000 }}
+      on:introstart={() => (status = '...starting our neural network...')}
+      on:introend={() => (status = '...loading results')}>
+      {status}
+    </p>
   {:then number}
     {#if !loading}
-      <h3>Result: {number}</h3>
-      <h3>{input} {type}</h3>
-      <h3>*</h3>
-      <h3>{number} {type}</h3>
+      <h3 transition:fly={{ y: 300, duration: 3000 }}>
+        Result: {number} {type}
+      </h3>
     {/if}
   {/await}
 

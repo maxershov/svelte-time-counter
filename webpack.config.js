@@ -1,6 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
-
+const myLocalHost = require("./host");
 const mode = process.env.NODE_ENV || 'development';
 const prod = mode === 'production';
 
@@ -9,6 +9,8 @@ module.exports = {
 		bundle: ['./src/main.js']
 	},
 	devServer: {
+		host: myLocalHost.host,
+        port: 8080,
 		open: true
 	},
 	resolve: {

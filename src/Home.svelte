@@ -3,10 +3,11 @@
     text-transform: uppercase;
     color: rgb(255, 255, 255);
     text-shadow: 2px 2px 0px rgb(12, 11, 11);
-    font-size: 2.3rem;
+    font-size: 3rem;
+    padding: 0 1rem;
   }
   a {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     margin-right: 1rem;
     color: white;
     text-transform: uppercase;

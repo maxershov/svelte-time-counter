@@ -1,9 +1,61 @@
-html,
-body {
+html, body {
     position: relative;
     width: 100%;
     height: 100%;
     font-size: 16px;
+}
+
+@media only screen and (min-width: 3840px) {
+    html {
+        font-size: 3.5rem;
+    }
+    body {
+        background-image: url("./jeshoots_bg3840.jpg");
+    }
+}
+
+@media only screen and (min-width: 1920px) and (max-width: 3839px) {
+    html {
+        font-size: 1.5rem;
+    }
+    body {
+        background-image: url("./jeshoots_bg1920.jpg");
+    }
+}
+
+@media only screen and (min-width: 1600px) and (max-width: 1919px) {
+    body {
+        background-image: url("./jeshoots_bg1600.jpg");
+    }
+}
+
+@media only screen and (min-width: 1366px) and (max-width: 1599px) {
+    body {
+        background-image: url("./jeshoots_bg1366.jpg");
+    }
+}
+
+@media only screen and (min-width: 1280px) and (max-width: 1365px) {
+    body {
+        background-image: url("./jeshoots_bg1280.jpg");
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1279px) {
+    body {
+        background-image: url("./jeshoots_bg768.jpg");
+        background-attachment: scroll !important;
+    }
+}
+
+@media only screen and (min-width: 250px) and (max-width: 767px) {
+    html {
+        font-size: 0.5rem;
+    }
+    body {
+        background-image: url("./jeshoots_bg500.jpg");
+        background-attachment: scroll !important;
+    }
 }
 
 body {
@@ -11,10 +63,9 @@ body {
     margin: 0;
     box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    background-image: url("./jeshoots_background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top center;
     background-attachment: fixed;
 }
 
