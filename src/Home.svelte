@@ -21,6 +21,9 @@
     text-transform: uppercase;
     text-shadow: 1px 1px 0px rgb(12, 11, 11);
   }
+  a:hover {
+    text-decoration: underline rgb(216, 3, 236);
+  }
   #menuBtn {
     display: none;
     border: none;

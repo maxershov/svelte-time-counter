@@ -3,10 +3,10 @@
   import { fly } from "svelte/transition";
   let input;
   let answer;
-  let type = "часов";
   let promise;
   let loading = true;
   let status;
+  let hours = false;
 
   function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -42,25 +42,85 @@
   input {
     width: 20rem;
   }
-  select,
+  input::placeholder {
+    /* font-size: 1.3rem; */
+    font-style: oblique;
+  }
   input,
   button {
     font-size: 1.5rem;
-  }
-  select {
-    cursor: pointer;
+    border-radius: 1em;
+    border-color: rgb(216, 3, 236);
   }
   button {
     display: block;
+    font-weight: bold;
+    color: white;
     margin: 0 auto;
     margin-top: 0.5rem;
     cursor: pointer;
     width: 10rem;
+    background-color: rgb(216, 3, 236);
+  }
+  button:hover,
+  button:focus {
+    border-color: white;
   }
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
+  }
+
+  .toggle-check-input {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+  }
+
+  .toggle-check-text {
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: inline-block;
+    position: relative;
+    text-transform: uppercase;
+    background: rgb(216, 3, 236);
+    padding: 0.25em 0.5em 0.25em 2em;
+    border-radius: 1em;
+    min-width: 2em;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .toggle-check-text:after {
+    content: " ";
+    display: block;
+    background: #fff;
+    width: 1.1em;
+    height: 1.1em;
+    border-radius: 1em;
+    position: absolute;
+    left: 0.3em;
+    top: 0.25em;
+    transition: left 0.15s, margin-left 0.15s;
+  }
+
+  .toggle-check-text:before {
+    content: "Дней";
+  }
+
+  .toggle-check-input:checked ~ .toggle-check-text {
+    padding-left: 0.5em;
+    padding-right: 2em;
+  }
+
+  .toggle-check-input:checked ~ .toggle-check-text:before {
+    content: "Часов";
+  }
+
+  .toggle-check-input:checked ~ .toggle-check-text:after {
+    left: 100%;
+    margin-left: -1.4em;
   }
 </style>
 
@@ -75,12 +135,16 @@
       required
       type="number"
       bind:value={input}
-      placeholder="Введите время"
+      placeholder=" Введите время"
       on:input={() => (loading = true)} />
-    <select bind:value={type} on:input={() => (loading = true)} id="timeChose">
-      <option value="часов">Часов</option>
-      <option value="дней">Дней</option>
-    </select>
+    <label class="toggle-check">
+      <input
+        on:click={(loading = true)}
+        bind:checked={hours}
+        type="checkbox"
+        class="toggle-check-input" />
+      <span class="toggle-check-text" />
+    </label>
     <button type="submit">Запустить</button>
   </form>
   {#await promise}
@@ -94,7 +158,7 @@
   {:then number}
     {#if !loading}
       <h3 transition:fly={{ y: 300, duration: 3000 }}>
-        Результат: {number} {type}
+        Результат: {number} {hours ? 'часов' : 'дней'}
       </h3>
     {/if}
   {/await}
