@@ -23,7 +23,7 @@
 
   function randomInteger(min, max) {
     return (Math.random() * (max - min) + min).toFixed(1);
-}
+  }
 </script>
 
 <style>
@@ -31,19 +31,21 @@
     padding-top: 20rem;
     text-align: center;
     padding-bottom: 10rem;
-    border-bottom: solid 1px;
     background-color: rgb(255, 255, 255, 0.7);
   }
   h2 {
     text-shadow: 2px 2px 0px rgb(255, 255, 255);
   }
+  p {
+    padding: 0 3rem;
+  }
   input {
-    width: 17rem;
+    width: 20rem;
   }
   select,
   input,
   button {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
   select {
     cursor: pointer;
@@ -62,18 +64,18 @@
   }
 </style>
 
-<div class="counter">
+<div id="test" class="counter">
   <h2>ПОПРОБУЙТЕ СЕЙЧАС:</h2>
   <p>
-    Введите предоставленное заказчиком/управляющим время разработки, и наша
-    нейросеть рассчитает точное время разработки
+    Введите предоставленное заказчиком время разработки, и наша нейросеть
+    рассчитает точное время разработки
   </p>
   <form on:submit|preventDefault={handleClick}>
     <input
       required
       type="number"
       bind:value={input}
-      placeholder="введите время"
+      placeholder="Введите время"
       on:input={() => (loading = true)} />
     <select bind:value={type} on:input={() => (loading = true)} id="timeChose">
       <option value="часов">Часов</option>

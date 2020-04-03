@@ -29,11 +29,14 @@
     width: 15rem;
   }
   img {
-    width: 9rem;
+    width: 6rem;
+  }
+  .about__card:last-child img {
+    width: 5rem;
   }
 </style>
 
-<div class="about">
+<div id="about" class="about">
   <h2>О НАС:</h2>
   <div class="about__text">
     <p>

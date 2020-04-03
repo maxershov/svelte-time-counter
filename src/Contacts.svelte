@@ -1,14 +1,27 @@
+<script>
+  import facebook from "./images/facebook.svg";
+  import github from "./images/github.svg";
+</script>
+
 <style>
-  h2 {
+  .contacts {
+    /* margin-top: 0; */
+    padding-top: 1rem;
+    /* border-top: solid 1px black; */
     text-align: center;
+    background-color: white;
   }
+
 </style>
 
-<div class="contacts">
-  <h2>CONTACT ME:</h2>
-  <form>
-    <input required minLength={5} placeholder="e-mail" type="email" />
-    <textarea required name="message" placeholder="MESSAGE" minLength={5} />
-    <button type="submit">Submit</button>
-  </form>
+<div id="#contacts" class="contacts">
+  <a href="https://www.facebook.com/maksksErshov">
+    <img alt="facebookLogo" src={facebook} />
+    Facebook
+  </a>
+  <a href="https://github.com/maxershov">
+    <img alt="githubLogo" src={github} />
+    Github
+  </a>
+  <p>Max Ershov 2020</p>
 </div>

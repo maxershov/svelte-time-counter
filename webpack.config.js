@@ -4,12 +4,16 @@ const path = require('path');
 const mode = process.env.NODE_ENV || 'development';
 const prod = mode === 'production';
 
+// myLocalHost = require('./host');
+
+
 module.exports = {
 	entry: {
 		bundle: ['./src/main.js']
 	},
 	devServer: {
-        port: 8080,
+		// host: myLocalHost.host,
+		port: 8080,
 		open: true
 	},
 	resolve: {
