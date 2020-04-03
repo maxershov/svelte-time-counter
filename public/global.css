@@ -43,8 +43,24 @@ html, body {
 
 @media only screen and (min-width: 768px) and (max-width: 1279px) {
     body {
-        background-image: url("./jeshoots_bg768.jpg");
+        background-image: none !important;
         background-attachment: scroll !important;
+    }
+    body:before {
+        content: '';
+        background-image: url("./jeshoots_bg768.jpg");
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: contain;
+        /* 
+        
+        background-attachment: fixed; */
     }
 }
 
@@ -53,8 +69,23 @@ html, body {
         font-size: 0.5rem;
     }
     body {
-        background-image: url("./jeshoots_bg500.jpg");
+        background-image: none !important;
         background-attachment: scroll !important;
+    }
+    body:before {
+        content: '';
+        background-image: url("./jeshoots_bg500.jpg");
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: contain;
+        /* 
+        background-attachment: fixed; */
     }
 }
 

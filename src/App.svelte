@@ -9,7 +9,7 @@
 
 </style>
 
-<div className="app">
+<div class="app">
   <Home />
   <About />
   <Counter />
