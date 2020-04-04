@@ -50,7 +50,7 @@
   button {
     font-size: 1.5rem;
     border-radius: 1em;
-    border-color: rgb(216, 3, 236);
+    border-color: rgb(133, 3, 145);
   }
   button {
     display: block;
@@ -60,7 +60,7 @@
     margin-top: 0.5rem;
     cursor: pointer;
     width: 10rem;
-    background-color: rgb(216, 3, 236);
+    background-color: rgb(133, 3, 145);
   }
   button:hover,
   button:focus {
@@ -84,7 +84,7 @@
     display: inline-block;
     position: relative;
     text-transform: uppercase;
-    background: rgb(216, 3, 236);
+    background: rgb(133, 3, 145);
     padding: 0.25em 0.5em 0.25em 2em;
     border-radius: 1em;
     min-width: 2em;
