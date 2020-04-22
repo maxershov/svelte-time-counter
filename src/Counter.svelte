@@ -7,6 +7,7 @@
   let loading = true;
   let status;
   let hours = false;
+  let open = false;
 
   function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -24,16 +25,21 @@
   function randomInteger(min, max) {
     return (Math.random() * (max - min) + min).toFixed(1);
   }
+
+  function openModal() {
+    open = !open;
+  }
 </script>
 
 <style>
   .counter {
-    padding-top: 20rem;
+    padding-top: 10rem;
     text-align: center;
     padding-bottom: 10rem;
     background-color: rgb(255, 255, 255, 0.7);
   }
   h2 {
+    padding: 10px;
     text-shadow: 2px 2px 0px rgb(255, 255, 255);
   }
   p {
@@ -41,9 +47,10 @@
   }
   input {
     width: 20rem;
+    padding:10px;
   }
   input::placeholder {
-    /* font-size: 1.3rem; */
+
     font-style: oblique;
   }
   input,
@@ -59,7 +66,6 @@
     margin: 0 auto;
     margin-top: 0.5rem;
     cursor: pointer;
-    width: 10rem;
     background-color: rgb(133, 3, 145);
   }
   button:hover,
@@ -122,45 +128,68 @@
     left: 100%;
     margin-left: -1.4em;
   }
+  .counter__wrapper {
+    display: none;
+  }
+  .counter__wrapper--open {
+    position: fixed;
+    width: 80vw;
+    height: 80vh;
+    background-color: rgba(252, 252, 252, 0.836);
+    top: 15vh;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .close__btn {
+    top: 10px;
+    left:10px;
+    position: absolute;
+  }
 </style>
 
 <div id="test" class="counter">
   <h2>ПОПРОБУЙТЕ СЕЙЧАС:</h2>
-  <p>
-    Введите предоставленное заказчиком время разработки, и наша нейросеть
-    рассчитает точное время разработки
-  </p>
-  <form on:submit|preventDefault={handleClick}>
-    <input
-      required
-      type="number"
-      bind:value={input}
-      placeholder=" Введите время"
-      on:input={() => (loading = true)} />
-    <label class="toggle-check">
-      <input
-        on:click={(loading = true)}
-        bind:checked={hours}
-        type="checkbox"
-        class="toggle-check-input" />
-      <span class="toggle-check-text" />
-    </label>
-    <button type="submit">Запустить</button>
-  </form>
-  {#await promise}
-    <p
-      in:fade
-      out:fly={{ y: 300, duration: 3000 }}
-      on:introstart={() => (status = '...загрузка нейронной сети...')}
-      on:introend={() => (status = `...обработка ${randomInteger(1000000, 100000000)} результатов...`)}>
-      {status}
+  <button on:click={openModal} class="open__btn">Попробовать</button>
+  <div class={open ? 'counter__wrapper--open' : 'counter__wrapper'}>
+    <button on:click={openModal} class="close__btn">X</button>
+    <p>
+      Введите предоставленное заказчиком время разработки, и наша нейросеть
+      рассчитает точное время до готового продукта
     </p>
-  {:then number}
-    {#if !loading}
-      <h3 transition:fly={{ y: 300, duration: 3000 }}>
-        Результат: {number} {hours ? 'часов' : 'дней'}
-      </h3>
-    {/if}
-  {/await}
+    <form on:submit|preventDefault={handleClick}>
+      <input
+        required
+        type="number"
+        bind:value={input}
+        placeholder=" Введите время"
+        on:input={() => (loading = true)} />
+      <label class="toggle-check">
+        <input
+          on:click={(loading = true)}
+          bind:checked={hours}
+          type="checkbox"
+          class="toggle-check-input" />
+        <span class="toggle-check-text" />
+      </label>
+      <button type="submit">Запустить</button>
+    </form>
+    {#await promise}
+      <p
+        in:fade
+        out:fly={{ y: 300, duration: 3000 }}
+        on:introstart={() => (status = '...загрузка нейронной сети...')}
+        on:introend={() => (status = `...обработка ${randomInteger(1000000, 100000000)} результатов...`)}>
+        {status}
+      </p>
+    {:then number}
+      {#if !loading}
+        <h3 transition:fly={{ y: 300, duration: 3000 }}>
+          Результат: {number} {hours ? 'часов' : 'дней'}
+        </h3>
+      {/if}
+    {/await}
+  </div>
 
 </div>
