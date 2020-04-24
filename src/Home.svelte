@@ -28,8 +28,6 @@
     display: none;
     border: none;
     background-color: none;
-  }
-  #menuImg {
     width: 4rem;
   }
   .home {
@@ -46,9 +44,12 @@
 </style>
 
 <div id="home" class="home">
-  <button id="menuBtn" on:click={chgMenu}>
-    <img alt="menuImg" id="menuImg" src={menuImg} />
-  </button>
+  <input
+    type="image"
+    id="menuBtn"
+    on:click={chgMenu}
+    alt="menuImg"
+    src={menuImg} />
   <nav class={openMenu ? 'links' : 'links_open'}>
     <a href="#home">Главная</a>
     <a href="#about">О Нас</a>
