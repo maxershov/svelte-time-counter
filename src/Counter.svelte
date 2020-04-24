@@ -180,7 +180,7 @@
         in:fade
         out:fly={{ y: 300, duration: 3000 }}
         on:introstart={() => (status = '...загрузка нейронной сети...')}
-        on:introend={() => (status = `...обработка ${randomInteger(1000000, 100000000)} результатов...`)}>
+        on:introend={() => (status = `...обработка ${Math.floor(randomInteger(1000000, 10000000))} результатов...`)}>
         {status}
       </p>
     {:then number}
