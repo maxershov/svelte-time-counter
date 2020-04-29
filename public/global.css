@@ -4,85 +4,68 @@ html, body {
     position: relative;
     width: 100%;
     height: 100%;
-    font-size: 16px;
 }
 
 @media only screen and (min-width: 3840px) {
     html {
-        font-size: 3.5rem;
+        font-size: 36px;
     }
-    body {
+    body:before {
         background-image: url("./jeshoots_bg3840.jpg");
     }
 }
 
-@media only screen and (min-width: 1920px) and (max-width: 3839px) {
+@media only screen and (max-width: 3839px) {
     html {
-        font-size: 1.5rem;
+        font-size: 24px;
     }
-    body {
+    body:before {
         background-image: url("./jeshoots_bg1920.jpg");
     }
 }
 
-@media only screen and (min-width: 1600px) and (max-width: 1919px) {
-    body {
+@media only screen and (max-width: 1919px) {
+    html {
+        font-size: 20px;
+    }
+    body:before {
         background-image: url("./jeshoots_bg1600.jpg");
     }
 }
 
-@media only screen and (min-width: 1366px) and (max-width: 1599px) {
-    body {
+@media only screen and (max-width: 1599px) {
+    html {
+        font-size: 18px;
+    }
+    body:before {
         background-image: url("./jeshoots_bg1366.jpg");
     }
 }
 
-@media only screen and (min-width: 1280px) and (max-width: 1365px) {
-    body {
+@media only screen and (max-width: 1365px) {
+    html {
+        font-size: 16px;
+    }
+    body:before {
         background-image: url("./jeshoots_bg1280.jpg");
     }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1279px) {
-    body {
-        background-image: none !important;
-        background-attachment: scroll !important;
+@media only screen and (max-width: 1279px) {
+    html {
+        font-size: 16px;
     }
     body:before {
-        content: '';
         background-image: url("./jeshoots_bg768.jpg");
-        position: fixed;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        z-index: -1;
-        background-repeat: no-repeat;
-        background-position: top center;
-        background-size: contain;
     }
 }
 
 @media only screen and (min-width: 250px) and (max-width: 767px) {
     html {
-        font-size: 0.6rem;
-    }
-    body {
-        background-image: none !important;
-        background-attachment: scroll !important;
+        font-size: 12px;
     }
     body:before {
-        content: '';
         background-image: url("./jeshoots_bg500.jpg");
-        position: fixed;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        z-index: -1;
-        background-repeat: no-repeat;
-        background-position: top center;
-        background-size: contain;
     }
     #menuBtn {
         display: block !important;
@@ -110,11 +93,20 @@ body {
     color: #333;
     margin: 0;
     box-sizing: border-box;
-    /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; */
-    background-size: cover;
+}
+
+body:before {
+    content: '';
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
     background-repeat: no-repeat;
-    background-position: top center;
-    background-attachment: fixed;
+    background-position: center;
+    /* background-size: contain; */
+    background-size: cover;
 }
 
 a {

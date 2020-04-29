@@ -5,38 +5,34 @@
 </script>
 
 <style>
-  h2 {
-    padding-top: 2rem;
-  }
-
   .about {
     background-color: white;
     text-align: center;
   }
+  .about__header {
+    padding-top: 20px;
+    margin-bottom: 10px;
+  }
   .about__text {
     text-align: center;
-    padding: 0 3rem;
+    width: 90%;
+    margin: 0 auto 50px auto;
   }
   .about__cards {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-wrap: wrap;
+    padding-bottom: 30px;
   }
-  .about__card {
+  .card {
     text-align: center;
-    padding: 1rem;
-    width: 15rem;
-  }
-  img {
-    width: 6rem;
-  }
-  .about__card:last-child img {
-    width: 5rem;
+    width: 250px;
+    padding-bottom: 10px;
   }
 </style>
 
 <div id="about" class="about">
-  <h2>О НАС:</h2>
+  <h2 class="about__header">О НАС:</h2>
   <div class="about__text">
     <p>
       Разрабатывая программное обеспечение, мы часто сталкиваемся с неправильно
@@ -51,24 +47,24 @@
       оценки заказчика.
     </p>
   </div>
-  <h2>НАШИ ПРЕИМУЩЕСТВА:</h2>
+  <h2 class="about__header">НАШИ ПРЕИМУЩЕСТВА:</h2>
   <div class="about__cards">
-    <div class="about__card">
-      <img alt="clock" src={clock} />
+    <div class="card">
+      <img alt="clock" width="100px" src={clock} />
       <h3>СКОРОСТЬ</h3>
       <p>Вы получите результат быстрее, чем можете себе представить</p>
     </div>
-    <div class="about__card">
-      <img alt="neural" src={neural} />
+    <div class="card">
+      <img alt="neural" width="100px" src={neural} />
       <h3>ТОЧНОСТЬ</h3>
       <p>
         Наша нейронная сеть проводит очень точные* расчеты, что гарантирует вам
-        отсутсвие дедлайнов
+        отсутствие дедлайнов
       </p>
       <i>*мнение автора</i>
     </div>
-    <div class="about__card">
-      <img alt="dollar" src={dollar} />
+    <div class="card">
+      <img alt="dollar" width="100px" src={dollar} />
       <h3>ЦЕНА</h3>
       <p>Время - бесценно* Поэтому сервис абсолютно бесплатный</p>
       <i>*мнение автора</i>

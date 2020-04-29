@@ -33,38 +33,23 @@
 
 <style>
   .counter {
-    padding-top: 10rem;
+    height: 100vh;
     text-align: center;
-    padding-bottom: 10rem;
     background-color: rgb(255, 255, 255, 0.7);
   }
-  h2 {
-    padding: 10px;
-    text-shadow: 2px 2px 0px rgb(255, 255, 255);
-  }
-  p {
-    padding: 0 3rem;
-  }
-  input {
-    width: 20rem;
-    padding:10px;
+  .counter__center {
+    padding-top: 50vh;
+    width: 80%;
+    margin: 0 auto;
   }
   input::placeholder {
-
     font-style: oblique;
-  }
-  input,
-  button {
-    font-size: 1.5rem;
-    border-radius: 1em;
-    border-color: rgb(133, 3, 145);
   }
   button {
     display: block;
     font-weight: bold;
     color: white;
     margin: 0 auto;
-    margin-top: 0.5rem;
     cursor: pointer;
     background-color: rgb(133, 3, 145);
   }
@@ -86,7 +71,7 @@
 
   .toggle-check-text {
     font-weight: bold;
-    font-size: 1.1rem;
+    /* font-size: 1.1rem; */
     display: inline-block;
     position: relative;
     text-transform: uppercase;
@@ -128,68 +113,112 @@
     left: 100%;
     margin-left: -1.4em;
   }
-  .counter__wrapper {
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .counter__modal {
     display: none;
   }
-  .counter__wrapper--open {
+  .modal {
     position: fixed;
-    width: 80vw;
+    width: 90vw;
     height: 80vh;
-    background-color: rgba(252, 252, 252, 0.836);
-    top: 15vh;
+    background-color: rgba(252, 252, 252, 0.9);
+    top: 5vh;
     left: 0;
     right: 0;
     margin: 0 auto;
     overflow: hidden;
+    border-radius: 1em;
+    animation: fadein 1s;
+  }
+  .counter__modal--open {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.562);
+    animation: fadein 1s;
   }
   .close__btn {
     top: 10px;
-    left:10px;
+    left: 10px;
     position: absolute;
+    border-radius: 1em;
+  }
+  .open__btn {
+    padding: 15px;
+    font-size: 1.1em;
+  }
+  .text {
+    padding-top: 20px;
+    margin-bottom: 30px;
+  }
+  .input__days {
+    width: 50%;
+    font-size: 1.1em;
+    border-radius: 1em;
+    margin-bottom: 10px;
+  }
+  .button__submit {
+    padding: 10px 15px;
+    font-size: 1.1em;
+    border-radius: 1em;
   }
 </style>
 
-<div id="test" class="counter">
-  <h2>ПОПРОБУЙТЕ СЕЙЧАС:</h2>
-  <button on:click={openModal} class="open__btn">Попробовать</button>
-  <div class={open ? 'counter__wrapper--open' : 'counter__wrapper'}>
-    <button on:click={openModal} class="close__btn">X</button>
-    <p>
-      Введите предоставленное заказчиком время разработки, и наша нейросеть
-      рассчитает точное время до готового продукта
-    </p>
-    <form on:submit|preventDefault={handleClick}>
-      <input
-        required
-        type="number"
-        bind:value={input}
-        placeholder=" Введите время"
-        on:input={() => (loading = true)} />
-      <label class="toggle-check">
-        <input
-          on:click={(loading = true)}
-          bind:checked={hours}
-          type="checkbox"
-          class="toggle-check-input" />
-        <span class="toggle-check-text" />
-      </label>
-      <button type="submit">Запустить</button>
-    </form>
-    {#await promise}
-      <p
-        in:fade
-        out:fly={{ y: 300, duration: 3000 }}
-        on:introstart={() => (status = '...загрузка нейронной сети...')}
-        on:introend={() => (status = `...обработка ${Math.floor(randomInteger(1000000, 10000000))} результатов...`)}>
-        {status}
-      </p>
-    {:then number}
-      {#if !loading}
-        <h3 transition:fly={{ y: 300, duration: 3000 }}>
-          Результат: {number} {hours ? 'часов' : 'дней'}
-        </h3>
-      {/if}
-    {/await}
+<div id="test" class="counter blur">
+  <div class="counter__center">
+    <h2>ПОПРОБУЙТЕ СЕЙЧАС:</h2>
+    <button on:click={openModal} class="open__btn">
+      Рассчитать точное время
+    </button>
   </div>
-
+  <div class={open ? 'counter__modal--open' : 'counter__modal'}>
+    <div class="modal">
+      <button class="close__btn" on:click={openModal}>X</button>
+      <p class="text">
+        Введите предоставленное заказчиком время разработки, и наша нейросеть
+        рассчитает точное время до готового продукта
+      </p>
+      <form on:submit|preventDefault={handleClick}>
+        <input
+          class="input__days"
+          required
+          type="number"
+          bind:value={input}
+          placeholder=" Введите время"
+          on:input={() => (loading = true)} />
+        <label class="toggle-check">
+          <input
+            on:click={(loading = true)}
+            bind:checked={hours}
+            type="checkbox"
+            class="toggle-check-input" />
+          <span class="toggle-check-text" />
+        </label>
+        <button class="button__submit" type="submit">Запустить</button>
+      </form>
+      {#await promise}
+        <p
+          in:fade
+          out:fly={{ y: 300, duration: 3000 }}
+          on:introstart={() => (status = '...загрузка нейронной сети...')}
+          on:introend={() => (status = `...обработка ${Math.floor(randomInteger(1000000, 10000000))} результатов...`)}>
+          {status}
+        </p>
+      {:then number}
+        {#if !loading}
+          <h3 transition:fly={{ y: 300, duration: 3000 }}>
+            Результат: {number} {hours ? 'часов' : 'дней'}
+          </h3>
+        {/if}
+      {/await}
+    </div>
+  </div>
 </div>

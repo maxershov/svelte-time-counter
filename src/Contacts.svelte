@@ -5,13 +5,13 @@
 
 <style>
   .contacts {
-    /* margin-top: 0; */
-    padding-top: 1rem;
-    /* border-top: solid 1px black; */
+    padding-top: 20px;
     text-align: center;
     background-color: white;
   }
-
+  a {
+    margin-right: 10px;
+  }
 </style>
 
 <div id="#contacts" class="contacts">

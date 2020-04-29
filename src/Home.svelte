@@ -7,19 +7,11 @@
 </script>
 
 <style>
-  h1 {
-    text-transform: uppercase;
-    color: rgb(255, 255, 255);
-    text-shadow: 2px 2px 0px rgb(12, 11, 11);
-    font-size: 2rem;
-    padding: 0 1rem;
-  }
   a {
-    font-size: 1.6rem;
-    margin-right: 1rem;
-    color: white;
+    margin-right: 10px;
+    color: rgb(14, 10, 10);
     text-transform: uppercase;
-    text-shadow: 1px 1px 0px rgb(12, 11, 11);
+    /* text-shadow: 1px 1px 0px rgb(12, 11, 11); */
   }
   a:hover {
     text-decoration: underline rgb(133, 3, 145);
@@ -28,18 +20,23 @@
     display: none;
     border: none;
     background-color: none;
-    width: 4rem;
+    width: 40px;
   }
   .home {
-    padding-bottom: 35rem;
+    height: 100vh;
+    text-align: center;
   }
   .links {
     text-align: right;
   }
   .home__text {
-    text-align: center;
-    margin-top: 10rem;
-    align-items: center;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    padding-top: 20vh;
+    /* font-size: 1.7em; */
+    width: 90%;
+    margin: 0 auto;
   }
 </style>
 
@@ -55,7 +52,5 @@
     <a href="#about">О Нас</a>
     <a href="#test">Рассчитать</a>
   </nav>
-  <div class="home__text">
-    <h1>Получите точное время разработки проекта</h1>
-  </div>
+  <h1 class="home__text">Получите точное время разработки проекта</h1>
 </div>
