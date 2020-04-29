@@ -1,5 +1,6 @@
 html, body {
     font-family: 'Merriweather', serif;
+    font-display: swap;
     position: relative;
     width: 100%;
     height: 100%;
