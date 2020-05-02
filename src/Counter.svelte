@@ -198,7 +198,7 @@
           required
           type="number"
           bind:value={input}
-          placeholder=" Введите время"
+          placeholder={` Укажите ${hours ? 'часы' : 'дни'}`}
           on:input={() => (loading = true)} />
         <label class="toggle-check">
           <input
