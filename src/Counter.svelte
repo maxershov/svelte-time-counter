@@ -35,7 +35,7 @@
   .counter {
     height: 100vh;
     text-align: center;
-    background-color: rgb(255, 255, 255, 0.7);
+    color: white;
   }
   .counter__center {
     padding-top: 50vh;
@@ -51,11 +51,14 @@
     color: white;
     margin: 0 auto;
     cursor: pointer;
-    background-color: rgb(133, 3, 145);
+    border-radius: 25px;
+    background-color: var(--btn);
+    border:none;
   }
   button:hover,
   button:focus {
-    border-color: white;
+    box-shadow: inset 2px 1px 2px black, inset -2px -1px 2px black;
+    border:none;
   }
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
@@ -71,11 +74,10 @@
 
   .toggle-check-text {
     font-weight: bold;
-    /* font-size: 1.1rem; */
     display: inline-block;
     position: relative;
     text-transform: uppercase;
-    background: rgb(133, 3, 145);
+    background: var(--btn);
     padding: 0.25em 0.5em 0.25em 2em;
     border-radius: 1em;
     min-width: 2em;
@@ -128,7 +130,7 @@
     position: fixed;
     width: 90vw;
     height: 80vh;
-    background-color: rgba(252, 252, 252, 0.9);
+    background-color: var(--normal);
     top: 5vh;
     left: 0;
     right: 0;
@@ -158,10 +160,11 @@
   .text {
     padding-top: 20px;
     margin-bottom: 30px;
+    color: var(--red);
   }
   .input__days {
     width: 50%;
-    font-size: 1.1em;
+    font-size: 1.4em;
     border-radius: 1em;
     margin-bottom: 10px;
   }

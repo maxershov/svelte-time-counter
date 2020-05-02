@@ -7,7 +7,12 @@
   .contacts {
     padding-top: 20px;
     text-align: center;
-    background-color: white;
+    background-color: var(--bg);
+  }
+  .signature {
+    color:grey;
+    font-size:0.6em;
+    padding-bottom:5px;
   }
   a {
     margin-right: 10px;
@@ -23,5 +28,5 @@
     <img alt="githubLogo" src={github} />
     Github
   </a>
-  <p>Max Ershov 2020</p>
+  <p class="signature">Max Ershov 2020</p>
 </div>

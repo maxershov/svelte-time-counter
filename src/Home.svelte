@@ -8,13 +8,11 @@
 
 <style>
   a {
-    margin-right: 10px;
-    color: rgb(14, 10, 10);
     text-transform: uppercase;
-    /* text-shadow: 1px 1px 0px rgb(12, 11, 11); */
+    color: rgb(255, 255, 255);
   }
   a:hover {
-    text-decoration: underline rgb(133, 3, 145);
+    text-decoration: underline var(--btn);
   }
   #menuBtn {
     display: none;
@@ -23,18 +21,24 @@
     width: 40px;
   }
   .home {
-    height: 100vh;
+    height: 105vh;
     text-align: center;
   }
   .links {
-    text-align: right;
+    text-align: left;
+  }
+  .links :first-child {
+    margin-left: 10px;
+  }
+  .links :not(:first-child) {
+    margin-left: 20px;
   }
   .home__text {
     text-transform: uppercase;
     color: rgb(255, 255, 255);
+    text-shadow: 1px 0px 1px white;
     font-weight: bold;
     padding-top: 20vh;
-    /* font-size: 1.7em; */
     width: 90%;
     margin: 0 auto;
   }
@@ -52,5 +56,5 @@
     <a href="#about">О Нас</a>
     <a href="#test">Рассчитать</a>
   </nav>
-  <h1 class="home__text">Получите точное время разработки проекта</h1>
+  <h1 class="home__text">anti-Deadline neural network</h1>
 </div>
