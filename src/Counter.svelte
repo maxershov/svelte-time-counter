@@ -139,7 +139,7 @@
     margin: 0 auto;
     overflow: hidden;
     border-radius: 1em;
-    animation: fadein 1s;
+    animation: fadein 0.4s;
   }
   .counter__modal--open {
     position: fixed;

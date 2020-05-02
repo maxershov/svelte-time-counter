@@ -12,7 +12,7 @@ html, body {
 
 @media only screen and (min-width: 3840px) {
     html {
-        font-size: 36px;
+        font-size: 48px;
     }
     body:before {
         background-image: url("./bg3840.jpg");
@@ -61,6 +61,9 @@ html, body {
     }
     .links_open {
         overflow: hidden;
+        position: absolute;
+        z-index: 69;
+        width: 100%;
     }
     .links_open a {
         text-align: left;
