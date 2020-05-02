@@ -160,7 +160,7 @@
     font-size: 1.1em;
   }
   .text {
-    padding-top: 20px;
+    padding: 20px 5px 0 5px;
     margin-bottom: 30px;
     color: var(--red);
   }
@@ -174,6 +174,9 @@
     padding: 10px 15px;
     font-size: 1.1em;
     border-radius: 1em;
+  }
+  input {
+    padding-left:3px;
   }
 </style>
 
