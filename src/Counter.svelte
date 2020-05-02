@@ -46,19 +46,21 @@
     font-style: oblique;
   }
   button {
+    font: inherit;
+    text-transform: uppercase;
     display: block;
     font-weight: bold;
     color: white;
     margin: 0 auto;
     cursor: pointer;
-    border-radius: 25px;
+    border-radius: 20px;
     background-color: var(--btn);
-    border:none;
+    border: none;
   }
   button:hover,
   button:focus {
     box-shadow: inset 2px 1px 2px black, inset -2px -1px 2px black;
-    border:none;
+    border: none;
   }
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
@@ -177,10 +179,8 @@
 
 <div id="test" class="counter blur">
   <div class="counter__center">
-    <h2>ПОПРОБУЙТЕ СЕЙЧАС:</h2>
-    <button on:click={openModal} class="open__btn">
-      Рассчитать точное время
-    </button>
+    <h2>ПОПРОБУЙТЕ СЕЙЧАС</h2>
+    <button on:click={openModal} class="open__btn">запуск программы</button>
   </div>
   <div class={open ? 'counter__modal--open' : 'counter__modal'}>
     <div class="modal">
@@ -205,7 +205,7 @@
             class="toggle-check-input" />
           <span class="toggle-check-text" />
         </label>
-        <button class="button__submit" type="submit">Запустить</button>
+        <button class="button__submit" type="submit">рассчитать</button>
       </form>
       {#await promise}
         <p

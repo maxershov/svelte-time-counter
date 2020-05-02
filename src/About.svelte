@@ -20,11 +20,12 @@
   }
   .about__second {
     position: relative;
-    top: -60px;
+    top: -40px;
   }
   .about__header {
     padding-top: 20px;
     margin-bottom: 10px;
+    letter-spacing: 1px;
   }
   .about__text {
     text-align: center;
@@ -46,7 +47,7 @@
 
 <div id="about" class="about">
   <div class="about__first">
-    <h2 class="about__header">О НАС:</h2>
+    <h3 class="about__header">О НАС</h3>
     <div class="about__text">
       <p>
         Разрабатывая программное обеспечение, мы часто сталкиваемся с
@@ -63,7 +64,7 @@
     </div>
   </div>
   <div class="about__second">
-    <h2 class="about__header">НАШИ ПРЕИМУЩЕСТВА:</h2>
+    <h3 class="about__header">НАШИ ПРЕИМУЩЕСТВА</h3>
     <div class="about__cards">
       <div class="card">
         <img alt="clock" width="100px" src={clock} />

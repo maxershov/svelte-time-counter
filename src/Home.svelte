@@ -7,6 +7,10 @@
 </script>
 
 <style>
+  .home {
+    height: 105vh;
+    text-align: center;
+  }
   a {
     text-transform: uppercase;
     color: rgb(255, 255, 255);
@@ -19,10 +23,6 @@
     border: none;
     background-color: none;
     width: 40px;
-  }
-  .home {
-    height: 105vh;
-    text-align: center;
   }
   .links {
     text-align: left;
@@ -38,9 +38,10 @@
     color: rgb(255, 255, 255);
     text-shadow: 1px 0px 1px white;
     font-weight: bold;
-    padding-top: 20vh;
+    padding-top: 30vh;
     width: 90%;
     margin: 0 auto;
+    letter-spacing: 5px;
   }
 </style>
 
