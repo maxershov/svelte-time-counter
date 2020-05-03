@@ -153,11 +153,10 @@
     top: 10px;
     left: 10px;
     position: absolute;
-    border-radius: 1em;
+    border-radius: 25px;
   }
   .open__btn {
     padding: 15px;
-    font-size: 1.1em;
   }
   .text {
     padding: 20px 5px 0 5px;
@@ -166,14 +165,13 @@
   }
   .input__days {
     width: 50%;
-    font-size: 1.4em;
-    border-radius: 1em;
+    font-size: 1.2em;  /*fix ios autozoom */
+    border-radius: 25px;
     margin-bottom: 10px;
   }
   .button__submit {
     padding: 10px 15px;
-    font-size: 1.1em;
-    border-radius: 1em;
+    border-radius: 25px;
   }
   input {
     padding-left:3px;

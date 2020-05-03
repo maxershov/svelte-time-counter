@@ -30,7 +30,7 @@ html, body {
 
 @media only screen and (max-width: 1919px) {
     html {
-        font-size: 20px;
+        font-size: 18px;
     }
     body:before {
         background-image: url("./bg1152.jpg");
@@ -48,7 +48,7 @@ html, body {
 
 @media only screen and (min-width: 250px) and (max-width: 767px) {
     html {
-        font-size: 12px;
+        font-size: 14px;
     }
     body:before {
         background-image: url("./bg745.jpg");
@@ -72,7 +72,6 @@ html, body {
         position: relative;
         padding: 0.9em;
         display: block;
-        font-size: 1.3em;
         width: 100%;
     }
 }

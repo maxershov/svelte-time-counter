@@ -40,7 +40,7 @@
   }
   .card {
     text-align: center;
-    width: 250px;
+    width: 18em;
     padding-bottom: 10px;
   }
 </style>
