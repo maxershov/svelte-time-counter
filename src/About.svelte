@@ -15,7 +15,8 @@
     background-color: var(--light);
     position: relative;
     top: -40px;
-    margin: 0 45px;
+    width: 90%;
+    margin: 0 auto;
     padding-bottom: 10px;
   }
   .about__second {
