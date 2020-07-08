@@ -165,16 +165,17 @@
   }
   .input__days {
     width: 50%;
-    font-size: 1.2em;  /*fix ios autozoom */
+    font-size: 1.2em; /*fix ios autozoom */
     border-radius: 25px;
     margin-bottom: 10px;
+    padding-left: 10px;
   }
   .button__submit {
     padding: 10px 15px;
     border-radius: 25px;
   }
   input {
-    padding-left:3px;
+    padding-left: 3px;
   }
 </style>
 
@@ -187,8 +188,9 @@
     <div class="modal">
       <button class="close__btn" on:click={openModal}>X</button>
       <p class="text">
-        Введите предоставленное заказчиком время разработки, и наша нейросеть
-        рассчитает точное время до готового продукта
+        Введите предоставленное заказчиком срок разработки, и наша нейросеть
+        рассчитает точное время до готового продукта (проверьте 1 {hours ? 'час' : 'день'}
+        !)
       </p>
       <form on:submit|preventDefault={handleClick}>
         <input
